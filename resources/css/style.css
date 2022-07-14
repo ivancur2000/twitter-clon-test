@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.linkSlide{
+  @apply text-[20px] px-3 py-2 rounded-full hover:bg-gray-200 cursor-pointer text-center;
+}
+
+.searchInput{
+  @apply w-[300px] bg-gray-100 px-12 py-2 rounded-full placeholder:text-gray-500 text-sm focus:outline-[1px] focus:outline-sky-500 focus:bg-transparent;
+}
+
+.activeIcon{
+  @apply text-sky-500;
+}

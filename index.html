@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>Twiiter</title>
+  <script type="module" src="/main.js"></script>
+  <script src="https://kit.fontawesome.com/8404af465c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <section class="max-h-screen">
+    <!-- barra lateral -->
+    <aside class="h-screen lg:w-[25%] w-[9%] fixed hidden sm:flex border-r-[1px] border-gray-100 lg:pl-10 lg:pr-7">
+      <ul class="flex flex-col items-center lg:items-start w-full">
+        <li class="text-sky-500 text-[30px] hover:bg-sky-100 px-3 py-2 rounded-full cursor-pointer">
+          <i class="fa-brands fa-twitter"></i>
+        </li>
+        <li class="linkSlide" data-bs-toggle="tooltip" title="Home">
+          <i class="w-[25px] fa-solid fa-house-user"></i>
+          <span class="text-[18px] ml-2 font-bold hidden lg:inline">Home</span>
+        </li>
+        <li class="linkSlide" data-bs-toggle="tooltip" title="Explore">
+          <i class="w-[25px] fa-solid fa-hashtag"></i>
+          <span class="text-[18px] ml-2 hidden lg:inline">Explore</span>
+        </li>
+        <li class="linkSlide" data-bs-toggle="tooltip" title="Notifications">
+          <i class="w-[25px] fa-regular fa-bell"></i>
+          <span class="text-[18px] ml-2 hidden lg:inline">Notifications</span>
+        </li>
+        <li class="linkSlide" data-bs-toggle="tooltip" title="Messages">
+          <i class="w-[25px] fa-regular fa-envelope"></i>
+          <span class="text-[18px] ml-2 hidden lg:inline">Messages</span>
+        </li>
+        <li class="linkSlide" data-bs-toggle="tooltip" title="Bookmarks">
+          <i class="w-[25px] fa-regular fa-bookmark"></i>
+          <span class="text-[18px] ml-2 hidden lg:inline">Bookmarks</span>
+        </li>
+        <li class="linkSlide" data-bs-toggle="tooltip" title="Lists">
+          <i class="w-[25px] fa-regular fa-rectangle-list"></i>
+          <span class="text-[18px] ml-2 hidden lg:inline">List</span>
+        </li>
+        <li class="linkSlide" data-bs-toggle="tooltip" title="Profile">
+          <i class="w-[25px] fa-regular fa-user"></i>
+          <span class="text-[18px] ml-2 hidden lg:inline">Profile</span>
+        </li>
+        <li class="linkSlide" data-bs-toggle="tooltip" title="More">
+          <i class="w-[25px] fa-solid fa-ellipsis"></i>
+          <span class="text-[18px] ml-2 hidden lg:inline">More</span>
+        </li>
+        <li class="bg-sky-500 hover:bg-sky-600 text-white font-bold lg:w-full lg:text-center lg:py-3 rounded-full"
+          data-bs-toggle="tooltip" title="Tweet">
+          <span class="hidden lg:inline">Tweet</span>
+          <img class="lg:hidden w-[50px]" src="./resources/img/2236318_tweet_tweet post_write_icon.png" alt="">
+        </li>
+        <li class="linkSlide lg:w-full mt-2 flex justify-center lg:justify-between items-center"
+          data-bs-toggle="tooltip" title="Acounts">
+          <div class="flex">
+            <img class="rounded-full w-[38px]" src="./resources/img/profile.jpeg" alt="">
+            <p class="hidden lg:flex flex-col ml-2">
+              <span class="text-[14px] font-bold">El Curto</span>
+              <span class="text-[14px] text-gray-500">@elCurto_js</span>
+            </p>
+          </div>
+          <i class="hidden lg:inline fa-solid fa-ellipsis"></i>
+        </li>
+      </ul>
+    </aside>
+    <!-- navbar -->
+    <nav class="fixed sm:left-[9%] lg:left-[25%] w-full sm:w-[91%] lg:w-[75%] flex justify-between">
+      <div class="flex pt-2 pl-2 sm:p-5 w-full justify-between border-r-[1px]">
+        <span class="flex items-center">
+          <img class="w-[35px] sm:hidden mr-4 rounded-full" src="./resources/img/profile.jpeg" alt="">
+          <h1 class="text-lg font-bold">Home</h1>
+        </span>
+        <img class="w-[20px] h-[20px] mt-2 mr-2" src="./resources/img/icons8-sparkling-100.png" alt="">
+      </div>
+      <div class="p-3 relative px-12 hidden md:inline">
+        <input id="searchInput" class="searchInput" type="text" placeholder="Search Twitter">
+        <i id="iconSearch" class="absolute left-[65px] top-[20px] text-gray-500 fa-solid fa-magnifying-glass"></i>
+        <i id="iconCancel" class="hidden absolute cursor-pointer right-[65px] top-[20px] activeIcon fa-solid fa-circle-xmark"></i>
+      </div>
+    </nav>
+    <!-- tweets -->
+    <!-- <section class="">
+      Esto son los tweets
+    </section> -->
+    <!-- responsive menu inferior -->
+    <section class="absolute sm:hidden bottom-0 w-full h-[40px]">
+      <ul class="flex justify-around">
+        <li class="text-2xl mx-2"> 
+          <i class="w-[25px] text-gray-700 fa-solid fa-house-user"></i>
+        </li>
+        <li class="text-2xl mx-2">
+          <i class="w-[25px] text-gray-700 fa-solid fa-magnifying-glass"></i>
+        </li>
+        <li class="text-2xl mx-2"> 
+          <i class="w-[25px] text-gray-700 fa-regular fa-bell"></i>
+        </li>
+        <li class="text-2xl mx-2"> 
+          <i class="w-[25px] text-gray-700 fa-regular fa-envelope"></i>
+        </li>
+      </ul>
+    </section>
+  </section>
+  <!-- tweet button -->
+  <a class="absolute sm:hidden bg-sky-500 bottom-[70px] right-4 rounded-full p-1" href="#">
+    <img class="w-[50px]" src="./resources/img/2236318_tweet_tweet post_write_icon.png" alt="">
+  </a>
+  <!-- responsive slideMenu -->
+  <aside class="hidden">
+    <div class="absolute left-0 top-0 h-screen max-h-screen bg-gray-900 w-full opacity-50"></div>
+    <section class="bg-white absolute left-0 top-0 h-screen w-[280px]">
+      <header class="p-3 fixed h-[60px] bg-white">
+        <h1 class="font-bold inline">Account info</h1>
+        <i class="text-xl ml-[130px] mr-2 fa-solid fa-xmark"></i>
+      </header>
+      <section class="mt-[60px] overscroll-contain w-[280px] h-[800px]">
+        hola
+      </section>
+    </section>
+  </aside>
+</body>
+
+</html>
